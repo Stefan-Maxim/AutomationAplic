@@ -19,6 +19,7 @@ public class SignInPage  extends BasePage {
         return instance;
     }
 
+
     private By signInButton = By.id("btn1");
     public void clickSignInButton(){
         LOG.info("Click 'Sign in' button");
