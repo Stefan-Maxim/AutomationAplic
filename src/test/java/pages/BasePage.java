@@ -11,7 +11,7 @@ public class BasePage {
 
     public static void setUp(){
         LOG.info("Start test");
-        System.setProperty("webdriver.chrome.driver" , "C://WebDrivers/chromedriver121");
+        System.setProperty("webdriver.chrome.driver" , "C://WebDrivers/chromedriver121.exe");
         driver = new ChromeDriver();
         String url = "https://demo.automationtesting.in/Index.html";
         driver.get(url);
