@@ -28,6 +28,10 @@ public class SignInPage extends BasePage {
     private By enterButton = By.id("enterbtn");
     private By errormessage = By.id("errormsg");
     private By skipSignIn = By.id("btn2");
+    private By enterEmail = By.id("email");
+    private By enterEmailB = By.id("enterimg");
+    private By enterFirstName = By.xpath("//input[@ng-model='FirstName']");
+    private By consent = By.xpath("//input[@aria-label='Accept all']");
 
     public void clickSignInButton() {
         LOG.info("Click 'Sign in' button");
@@ -75,6 +79,26 @@ public class SignInPage extends BasePage {
     public void clickSkipSignIn() {
         LOG.info("Click 'SKip sign in' button");
         driver.findElement(skipSignIn).click();
+    }
+
+    public void writteemail(String wemail) {
+        LOG.info("Input 'email' in field");
+        driver.findElement(enterEmail).sendKeys(wemail);
+    }
+
+    public void clickSignUp() {
+        LOG.info("Click 'sign up' button");
+        driver.findElement(enterEmailB).click();
+    }
+
+    public void enterFirstName(String FirstName) {
+        LOG.info("Input 'email' in field");
+        driver.findElement(enterFirstName).sendKeys(FirstName);
+    }
+
+    public void clickConstent() {
+        LOG.info("Click 'consent' button");
+        driver.findElement(consent).click();
     }
 
 }
