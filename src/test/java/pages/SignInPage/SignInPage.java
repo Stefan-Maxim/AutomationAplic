@@ -25,6 +25,9 @@ public class SignInPage extends BasePage {
     private By logo = By.id("logo");
     private By emailField = By.xpath("//input[@ng-model='Email']");
     private By passwordField = By.xpath("//input[@ng-model='Password']");
+    private By enterButton = By.id("enterbtn");
+    private By errormessage = By.id("errormsg");
+    private By skipSignIn = By.id("btn2");
 
     public void clickSignInButton() {
         LOG.info("Click 'Sign in' button");
@@ -41,6 +44,37 @@ public class SignInPage extends BasePage {
         return driver.findElement(logo).isDisplayed();
 
 
+    }
+
+    public void insertemail(String email) {
+        LOG.info("Input 'Email adress' in field");
+        driver.findElement(emailField).sendKeys(email);
+    }
+
+    public void insertPassword(String password) {
+        LOG.info("Input 'password' in field");
+        driver.findElement(passwordField).sendKeys(password);
+    }
+
+    public void clickenterButton(){
+        LOG.info("Click 'enter' button");
+        driver.findElement(enterButton).click();
+    }
+
+    public boolean iserrorMessageDisplayed(){
+        LOG.info("Verifi if errormsg is displayed");
+        return driver.findElement(errormessage).isDisplayed();
+    }
+
+    //Back in browser
+    public void clickBack(){
+    LOG.info("Click 'back' in browser");
+    driver.navigate().back();
+    }
+
+    public void clickSkipSignIn() {
+        LOG.info("Click 'SKip sign in' button");
+        driver.findElement(skipSignIn).click();
     }
 
 }
