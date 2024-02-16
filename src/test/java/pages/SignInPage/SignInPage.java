@@ -31,7 +31,9 @@ public class SignInPage extends BasePage {
     private By enterEmail = By.id("email");
     private By enterEmailB = By.id("enterimg");
     private By enterFirstName = By.xpath("//input[@ng-model='FirstName']");
-    private By consent = By.xpath("//input[@aria-label='Accept all']");
+    private By consent = By.xpath("//p[text()='Consent']");
+    private By enterLastName = By.xpath("//input[@ng-model='LastName']");
+    private By enterAdress = By.xpath("//input[@textarea='Adress']");
 
     public void clickSignInButton() {
         LOG.info("Click 'Sign in' button");
@@ -92,13 +94,23 @@ public class SignInPage extends BasePage {
     }
 
     public void enterFirstName(String FirstName) {
-        LOG.info("Input 'email' in field");
+        LOG.info("Input 'First Name' in field");
         driver.findElement(enterFirstName).sendKeys(FirstName);
     }
 
     public void clickConstent() {
         LOG.info("Click 'consent' button");
         driver.findElement(consent).click();
+    }
+
+    public void enterLastName(String LastName) {
+        LOG.info("Input 'Last Name' in field");
+        driver.findElement(enterLastName).sendKeys(LastName);
+    }
+
+    public void enterAdress(String Adress) {
+        LOG.info("Input 'Adress' in field");
+        driver.findElement(enterAdress).sendKeys(Adress);
     }
 
 }

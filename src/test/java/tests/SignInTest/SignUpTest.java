@@ -14,6 +14,8 @@ public class SignUpTest extends BaseTest {
 
         String wemail = "nimic@nimic.com";
         String FirstName = "BlaBla";
+        String LastName = "TotEu";
+        String Adress = "Strada asfaltata, numarul negativ";
 
 
         LOG.info("Writte 'email' in field");
@@ -27,6 +29,12 @@ public class SignUpTest extends BaseTest {
 
         LOG.info("Writte 'First name' in field");
         signInPage.enterFirstName(FirstName);
+
+        LOG.info("Writte 'Last name' in field");
+        signInPage.enterLastName(LastName);
+
+//        LOG.info("Writte 'Adress' in field");
+//        signInPage.enterAdress(Adress);
 
 
 
